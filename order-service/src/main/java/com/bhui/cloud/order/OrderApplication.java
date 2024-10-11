@@ -1,6 +1,7 @@
 package com.bhui.cloud.order;
 
 import com.bhui.cloud.common.handler.FeignConfig;
+import com.bhui.cloud.common.handler.SentinelConfig;
 import com.bhui.cloud.common.mybatis.MyBatisConfig;
 import com.bhui.cloud.common.properties.SsyProperties;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 @EnableAspectJAutoProxy(exposeProxy = true)
 @EnableConfigurationProperties({SsyProperties.class})
-@Import({MyBatisConfig.class, FeignConfig.class})
+@Import({MyBatisConfig.class, FeignConfig.class, SentinelConfig.class})
 @MapperScan(basePackages = {"com.bhui.cloud.order.mapper"})
 @Slf4j
 public class OrderApplication {

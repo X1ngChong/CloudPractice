@@ -53,6 +53,15 @@ public abstract class AbstractOrderService extends ServiceImpl<OrderMapper, Orde
         OrderDTO orderDTO = orderMapping.convertTo(orderDO);
         orderDTO.setSite(ssyProperties.getSite());
         orderDTO.setDesc(productDTO.getProductDesc());
+
+        if (orderDTO.getId() % 3 == 0){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
         return orderDTO;
     }
 
@@ -83,6 +92,7 @@ public abstract class AbstractOrderService extends ServiceImpl<OrderMapper, Orde
         OrderDO orderDO = new OrderDO();
         orderDO.setUid(1);
         // 从配置中心读取
+       // orderDO.setUsername(ssyProperties.getUsername()+"  ");
         orderDO.setUsername(ssyProperties.getUsername() + ":" + ssyProperties.getSecretKey());
         orderDO.setProductId(productDTO.getId());
         orderDO.setProductName(productDTO.getProductName());

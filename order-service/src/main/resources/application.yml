@@ -1,5 +1,11 @@
 server:
   port: ${order-service.port}
-ssy:
-  username: 松山院
-  site: www.ssy.top
+spring:
+  cloud:
+    sentinel:
+      transport:
+        port: ${sentinel.transport.port.order-service}
+        dashboard: ${sentinel.transport.dashboard}
+#ssy:
+#  username: 松山院
+#  site: www.ssy.top

@@ -5,6 +5,7 @@ import com.bhui.cloud.api.pojo.query.LoginQuery;
 import com.bhui.cloud.common.pojo.ResponseData;
 import com.bhui.cloud.common.properties.JwtProperties;
 import com.bhui.cloud.common.utils.JwtUtils;
+import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -22,7 +23,8 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class LoginController implements LoginFacade {
 
-    private final JwtProperties jwtProperties;
+    @Resource
+    private  JwtProperties jwtProperties;
 
     @PostMapping("/login")
     @Override

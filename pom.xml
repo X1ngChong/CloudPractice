@@ -36,6 +36,7 @@
     <spring-cloud-starter-bootstrap.version>3.1.4</spring-cloud-starter-bootstrap.version>
     <feign-hc5.version>13.0</feign-hc5.version>
     <jjwt.version>0.11.5</jjwt.version>
+        <nacos-aes-encryption-plugin.version>1.0.0-SNAPSHOT</nacos-aes-encryption-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -111,6 +112,13 @@
                 <version>${jjwt.version}</version>
                 <scope>runtime</scope>
             </dependency>
+
+            <!-- nacos-aes-encryption-plugin -->
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-aes-encryption-plugin</artifactId>
+                <version>${nacos-aes-encryption-plugin.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -127,6 +135,8 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
 
     <profiles>
