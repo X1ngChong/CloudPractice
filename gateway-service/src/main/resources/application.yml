@@ -1,0 +1,15 @@
+server:
+  port: ${gateway-service.port}
+spring:
+  profiles:
+    active: dev
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - gateway

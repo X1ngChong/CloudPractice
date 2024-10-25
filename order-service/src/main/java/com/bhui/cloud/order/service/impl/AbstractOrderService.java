@@ -54,13 +54,13 @@ public abstract class AbstractOrderService extends ServiceImpl<OrderMapper, Orde
         orderDTO.setSite(ssyProperties.getSite());
         orderDTO.setDesc(productDTO.getProductDesc());
 
-        if (orderDTO.getId() % 3 == 0){
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+//        if (orderDTO.getId() % 3 == 0){
+//            try {
+//                Thread.sleep(500);
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
 
         return orderDTO;
     }
